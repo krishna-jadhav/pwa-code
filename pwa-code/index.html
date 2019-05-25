@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<img src="fake-img.jpg">
+<div style="background: red; height: 200px;"></div>
+<script type="text/javascript">
+	if('serviceWorker' in navigator){
+		navigator.serviceWorker.register('./sw.js')
+		.then(res=>{
+			console.info('SW Registered') 
+		})
+		.catch(err=>{
+			console.error('Error in Registering SW', err);
+		})
+	} else
+	console.log('SW not Supported');
+</script>
+</body>
+</html>
